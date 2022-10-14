@@ -2,7 +2,7 @@
 """
 a script that starts a Flask web application
 """
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -41,19 +41,7 @@ def number(n: int):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def numberTemplate(n: int):
     'display a HTML page only if n is an integer:'
-
-    template = '''
-    <!DOCTYPE html>
-        <HTML lang="en">
-            <HEAD>
-                <TITLE>HBNB</TITLE>
-            </HEAD>
-            <BODY>
-                <H1>Number: {0}</H1>
-            </BODY>
-        </HTML>
-    '''.format(n)
-    return template
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
