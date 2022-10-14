@@ -5,8 +5,8 @@ a script that starts a Flask web application
 import flask
 from flask import Flask
 
-
 app = Flask(__name__)
+
 
 @app.route('/', strict_slashes=False)
 def hello():
